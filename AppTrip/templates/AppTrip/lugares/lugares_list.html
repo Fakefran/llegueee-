@@ -1,0 +1,48 @@
+
+{% extends "AppTrip/padres/padrelugares.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+Destinos Conocidos
+
+
+
+{% endblock %}
+
+{% block presentacion %}
+
+
+
+
+
+
+{% for lugar in object_list %}
+
+</form>
+<p>Nombre: {{lugar.destino}} </p>
+<p> Tipo de clima : {{lugar.tipodeclima}} </p>
+<p> Descripcion : {{lugar.reseña}} </p>
+
+    <a href="{% url 'lugarDetalle' lugar.id   %}" >Ver lugar</a>
+    <a href="{% url 'lugarEditar' lugar.id   %}" >Editar lugar</a>
+    <a href="{% url 'lugarBorrar'  lugar.id %}">Eliminar</a>
+    <br>
+    
+    <a href="{% url 'lugarCrear'   %}">Nuevo lugar.</a>
+
+
+
+
+{% endfor %}
+
+{% endblock %}
+{% block boton %}
+
+<a class="btn btn-primary" href="{% url 'lugarCrear' %}">Nueva reseña de Lugar</a>
+
+{% endblock %}

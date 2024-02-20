@@ -1,0 +1,27 @@
+{% extends "AppTrip/padres/padreagencias.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+
+{% endblock %}
+
+{% block presentacion %}
+
+<p>Nombre: {{agenciadeviajes.nombre}} </p>
+<p> Telefono : {{agenciadeviajes.telefono}} </p>
+<p> Email : {{agenciadeviajes.email}} </p>
+<p> Reseña : {{agenciadeviajes.reseña}} </p>
+
+
+<button><a href="{% url 'agenciaDeviajesLista' %}">Volver a la Lista</a></button>
+<button><a href="{% url 'agenciaDeviajesEditar' pk=agenciadeviajes.pk %}">Editar</a></button>
+<button><a href="{% url 'agenciaDeviajesBorrar' pk=agenciadeviajes.pk %}">Eliminar</a></button>
+
+
+
+{% endblock %}

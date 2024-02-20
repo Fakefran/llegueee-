@@ -1,0 +1,30 @@
+{% extends "AppTrip/padres/padrehoteles.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+
+{% endblock %}
+
+{% block presentacion %}
+
+<p>Nombre: {{hotel.nombre}} </p>
+<p> Ciudad : {{hotel.ciudad}} </p>
+<p> Calle : {{hotel.calle}} </p>
+<p> Numero : {{hotel.numero}} </p>
+<p> Email : {{hotel.email}} </p>
+<p> Telefono : {{hotel.telefono}} </p>
+<p> Descripcion : {{hotel.texto}} </p>
+
+
+<button><a href="{% url 'hotelLista' %}">Volver a la Lista</a></button>
+<button><a href="{% url 'hotelEditar' pk=hotel.pk %}">Editar</a></button>
+<button><a href="{% url 'hotelBorrar' pk=hotel.pk %}">Eliminar</a></button>
+
+
+
+{% endblock %}

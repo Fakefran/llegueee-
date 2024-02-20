@@ -1,0 +1,27 @@
+{% extends "AppTrip/padres/padreregistro.html" %}
+{% load static %}
+
+
+
+{% block titulo %}
+<h1 style="color: antiquewhite;">Registrate aca.</h1>
+
+<form action="" method="POST">{% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <button type="submit">Registrate</button>
+
+
+
+
+
+
+</form>
+{% endblock %}
+
+{% block presentacion %}
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "AppTrip/padres/padreregistro.html" %}
+{% load static %}
+
+
+
+{% block titulo %}
+<h1 style="color: antiquewhite;">Aca podemos agregar un avatar</h1>
+
+<form action="" method="POST" enctype="multipart/form-data" >{% csrf_token %}
+
+    {{formulario.as_p}}
+
+    <button type="submit">Cambiar Avatar</button>
+
+
+
+
+
+
+</form>
+{% endblock %}
+
+{% block presentacion %}
+
+
+
+{% endblock %}

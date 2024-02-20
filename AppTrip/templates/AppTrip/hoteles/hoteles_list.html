@@ -1,0 +1,45 @@
+
+{% extends "AppTrip/padres/padrehoteles.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+Reseñas Hoteles
+
+
+
+{% endblock %}
+<a href="{% url 'hotelCrear'   %}">Nuevo hotel.</a>
+{% block presentacion %}
+{% for hotel in object_list %}
+
+<p>Nombre: {{hotel.nombre}} </p>
+<p> Ciudad : {{hotel.ciudad}} </p>
+<p> Calle : {{hotel.calle}} </p>
+<p> Numero : {{hotel.numero}} </p>
+<p> Email : {{hotel.email}} </p>
+<p> Telefono : {{hotel.telefono}} </p>
+<p> Descripcion : {{hotel.texto}} </p>
+
+
+
+    <a href="{% url 'hotelDetalle' hotel.id   %}" >Ver hotel</a>
+    <a href="{% url 'hotelEditar' hotel.id   %}" >Editar hotel</a>
+    <a href="{% url 'hotelBorrar'  hotel.id %}">Eliminar</a>
+    <br>
+    
+    
+
+
+
+{% endfor %}
+
+{% endblock %}
+
+{% block boton %}
+<a class="btn btn-primary" href="{% url 'hotelCrear' %}">Nueva reseña de Hotel</a>
+ {% endblock %}

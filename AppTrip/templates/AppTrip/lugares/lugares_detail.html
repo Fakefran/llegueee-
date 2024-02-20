@@ -1,0 +1,24 @@
+{% extends "AppTrip/padres/padrelugares.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+
+{% endblock %}
+
+{% block presentacion %}
+
+<p> Nombre: {{lugar.destino}} </p>
+<p>Tipo de clima: {{lugar.tipodeclima}}</p>
+<p> Descripcion : {{lugar.reseña}} </p>
+<button><a href="{% url 'lugarLista' %}">Volver a la Lista</a></button>
+<button><a href="{% url 'lugarEditar' pk=lugar.pk %}">Editar</a></button>
+<button><a href="{% url 'lugarBorrar' pk=lugar.pk %}">Eliminar</a></button>
+
+
+
+{% endblock %}

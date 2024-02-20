@@ -1,0 +1,43 @@
+
+{% extends "AppTrip/padres/padreagencias.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+Reseñas agencia  de viajes
+
+
+
+{% endblock %}
+
+{% block presentacion %}
+{% for agenciadeviajes in object_list %}
+
+<p>Nombre: {{agenciadeviajes.nombre}} </p>
+<p> Telefono : {{agenciadeviajes.telefono}} </p>
+<p> Email : {{agenciadeviajes.email}} </p>
+<p> Reseña : {{agenciadeviajes.reseña}} </p>
+
+
+
+
+    <a href="{% url 'agenciaDeviajesDetalle' agenciadeviajes.id   %}" >Ver agenciadeviajes</a>
+    <a href="{% url 'agenciaDeviajesEditar' agenciadeviajes.id   %}" >Editar agenciadeviajes</a>
+    <a href="{% url 'agenciaDeviajesBorrar'  agenciadeviajes.id %}">Eliminar</a>
+    <br>
+    
+    
+
+
+
+{% endfor %}
+
+{% endblock %}
+
+{% block boton %}
+<a class="btn btn-primary" href="{% url 'agenciaDeviajesCrear' %}">Nueva reseña de Agecia de viajes</a>
+ {% endblock %}

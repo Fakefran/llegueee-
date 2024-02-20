@@ -1,0 +1,34 @@
+
+
+   
+{% extends "AppTrip/padres/padrehoteles.html" %}
+
+{% load static %}
+
+
+
+
+
+{% block titulo %}
+Contanos tu Expericia
+{% endblock %}
+
+{% block presentacion %}
+
+
+<form action="" method="POST">{% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Enviar">
+</form>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

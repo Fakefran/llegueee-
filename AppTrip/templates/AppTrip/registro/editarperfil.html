@@ -1,0 +1,32 @@
+{% extends "AppTrip/padres/padreregistro.html" %}
+{% load static %}
+
+
+
+{% block titulo %}
+
+Aca se edita la usuario
+{% endblock %}
+{% block presentacion %}
+
+<form action="" method="POST">{% csrf_token %}
+
+    {{formulario.as_p}}
+
+
+    <a href="{% url 'cambiarAvatar' %}">Cambiar imagen de perfil.</a>
+
+    <br>
+
+    <button type="submit">Editar.</button>
+
+
+
+
+
+
+</form>
+
+<br>
+
+{% endblock %}
